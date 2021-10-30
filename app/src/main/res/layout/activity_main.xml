@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/baseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="100dp"
+        android:text="Preis:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/percentLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="10%:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/baseLabel"
+        app:layout_constraintTop_toBottomOf="@+id/baseLabel" />
+
+    <TextView
+        android:id="@+id/tipLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Trinkgeld:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toTopOf="@+id/totalLable"
+        app:layout_constraintEnd_toEndOf="@+id/percentLable"
+        app:layout_constraintTop_toBottomOf="@+id/percentLable" />
+
+    <TextView
+        android:id="@+id/totalLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Gesamt:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@+id/tipLable"
+        app:layout_constraintTop_toBottomOf="@+id/tipLable" />
+
+    <EditText
+        android:id="@+id/baseInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ems="8"
+        android:hint="25.50"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/baseLabel"
+        app:layout_constraintTop_toTopOf="@id/baseLabel"
+        app:layout_constraintBottom_toBottomOf="@id/baseLabel"
+        tools:layout_editor_absoluteY="35dp" />
+
+    <SeekBar
+        android:id="@+id/percentInput"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:max="30"
+        app:layout_constraintBottom_toBottomOf="@+id/percentLable"
+        app:layout_constraintStart_toEndOf="@+id/percentLable"
+        app:layout_constraintStart_toStartOf="@+id/baseInput"
+        app:layout_constraintTop_toTopOf="@+id/percentLable" />
+
+    <TextView
+        android:id="@+id/tipOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/tipLable"
+        app:layout_constraintStart_toStartOf="@+id/percentInput"
+        app:layout_constraintTop_toTopOf="@+id/tipLable"
+        app:layout_constraintVertical_bias="0.472"
+        tools:text="1337" />
+
+    <TextView
+        android:id="@+id/totalOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/totalLable"
+        app:layout_constraintStart_toStartOf="@+id/tipOutput"
+        app:layout_constraintTop_toTopOf="@+id/totalLable"
+        tools:text="1337" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
